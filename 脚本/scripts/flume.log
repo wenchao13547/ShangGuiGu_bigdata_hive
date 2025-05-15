@@ -1,0 +1,155 @@
+29 十月 2024 18:48:05,473 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:c1
+29 十月 2024 18:48:05,476 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:c1
+29 十月 2024 18:48:05,476 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:r1
+29 十月 2024 18:48:05,476 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:r1
+29 十月 2024 18:48:05,476 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:r1
+29 十月 2024 18:48:05,477 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:c1
+29 十月 2024 18:48:05,477 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:c1
+29 十月 2024 18:48:05,477 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:r1
+29 十月 2024 18:48:05,477 INFO  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addComponentConfig:1203)  - Processing:r1
+29 十月 2024 18:48:05,477 WARN  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.validateConfigFilterSet:623)  - Agent configuration for 'a1' has no configfilters.
+29 十月 2024 18:48:05,484 WARN  [main] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.validateSinks:809)  - Agent configuration for 'a1' has no sinks.
+29 十月 2024 18:48:05,485 INFO  [main] (org.apache.flume.conf.FlumeConfiguration.validateConfiguration:163)  - Post-validation flume configuration contains configuration for agents: [a1]
+29 十月 2024 18:48:05,485 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:154)  - Creating channels
+29 十月 2024 18:48:05,498 INFO  [main] (org.apache.flume.channel.DefaultChannelFactory.create:42)  - Creating instance of channel c1 type org.apache.flume.channel.kafka.KafkaChannel
+29 十月 2024 18:48:05,511 INFO  [main] (org.apache.flume.channel.kafka.KafkaChannel.configure:183)  - Group ID was not specified. Using flume as the group id.
+29 十月 2024 18:48:05,519 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.loadChannels:208)  - Created channel c1
+29 十月 2024 18:48:05,519 INFO  [main] (org.apache.flume.source.DefaultSourceFactory.create:41)  - Creating instance of source r1, type TAILDIR
+29 十月 2024 18:48:05,532 INFO  [main] (org.apache.flume.node.AbstractConfigurationProvider.getConfiguration:123)  - Channel c1 connected to [r1]
+29 十月 2024 18:48:05,532 INFO  [main] (org.apache.flume.node.Application.initializeAllComponents:177)  - Initializing components
+29 十月 2024 18:48:05,533 INFO  [main] (org.apache.flume.node.Application.startAllComponents:207)  - Starting new configuration:{ sourceRunners:{r1=PollableSourceRunner: { source:Taildir source: { positionFile: /opt/module/flume/taildir_position.json, skipToEnd: false, byteOffsetHeader: false, idleTimeout: 120000, writePosInterval: 3000 } counterGroup:{ name:null counters:{} } }} sinkRunners:{} channels:{c1=org.apache.flume.channel.kafka.KafkaChannel{name: c1}} }
+29 十月 2024 18:48:05,534 INFO  [main] (org.apache.flume.node.Application.startAllComponents:214)  - Starting Channel c1
+29 十月 2024 18:48:05,535 INFO  [main] (org.apache.flume.node.Application.startAllComponents:229)  - Waiting for channel: c1 to start. Sleeping for 500 ms
+29 十月 2024 18:48:05,536 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.channel.kafka.KafkaChannel.start:134)  - Starting Kafka Channel: c1
+29 十月 2024 18:48:05,564 INFO  [lifecycleSupervisor-1-0] (org.apache.kafka.common.config.AbstractConfig.logAll:361)  - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [hadoop102:9092, hadoop103:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = false
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+29 十月 2024 18:48:05,627 INFO  [lifecycleSupervisor-1-0] (org.apache.kafka.common.utils.AppInfoParser$AppInfo.<init>:119)  - Kafka version: 2.7.2
+29 十月 2024 18:48:05,627 INFO  [lifecycleSupervisor-1-0] (org.apache.kafka.common.utils.AppInfoParser$AppInfo.<init>:120)  - Kafka commitId: 37a1cc36bf4d76f3
+29 十月 2024 18:48:05,627 INFO  [lifecycleSupervisor-1-0] (org.apache.kafka.common.utils.AppInfoParser$AppInfo.<init>:121)  - Kafka startTimeMs: 1730198885626
+29 十月 2024 18:48:05,628 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.channel.kafka.KafkaChannel.start:142)  - Topic = topic_log
+29 十月 2024 18:48:05,628 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: CHANNEL, name: c1: Successfully registered new MBean.
+29 十月 2024 18:48:05,628 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: CHANNEL, name: c1 started
+29 十月 2024 18:48:05,868 INFO  [kafka-producer-network-thread | producer-1] (org.apache.kafka.clients.Metadata.update:279)  - [Producer clientId=producer-1] Cluster ID: MqEtqnU9Sp2A-WZJiu3TSw
+29 十月 2024 18:48:06,036 INFO  [main] (org.apache.flume.node.Application.startAllComponents:252)  - Starting Source r1
+29 十月 2024 18:48:06,038 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.source.taildir.TaildirSource.start:94)  - r1 TaildirSource source starting with directory: {f1=/opt/module/applog/log/app.*}
+29 十月 2024 18:48:06,044 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.source.taildir.ReliableTaildirEventReader.<init>:84)  - taildirCache: [{filegroup='f1', filePattern='/opt/module/applog/log/app.*', cached=true}]
+29 十月 2024 18:48:06,051 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.source.taildir.ReliableTaildirEventReader.<init>:85)  - headerTable: {}
+29 十月 2024 18:48:06,064 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.source.taildir.ReliableTaildirEventReader.openFile:290)  - Opening file: /opt/module/applog/log/app.2024-10-26.log, inode: 4199550, pos: 0
+29 十月 2024 18:48:06,070 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.source.taildir.ReliableTaildirEventReader.openFile:290)  - Opening file: /opt/module/applog/log/app.log, inode: 4200226, pos: 0
+29 十月 2024 18:48:06,070 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.source.taildir.ReliableTaildirEventReader.<init>:95)  - Updating position from position file: /opt/module/flume/taildir_position.json
+29 十月 2024 18:48:06,089 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.source.taildir.ReliableTaildirEventReader.loadPositionFile:140)  - Missing file: /opt/module/applog/log/app.log, inode: 4199550, pos: 367135
+29 十月 2024 18:48:06,091 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:119)  - Monitored counter group for type: SOURCE, name: r1: Successfully registered new MBean.
+29 十月 2024 18:48:06,091 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:95)  - Component type: SOURCE, name: r1 started
+29 十月 2024 18:50:12,089 INFO  [PollableSourceRunner-TaildirSource-r1] (org.apache.flume.source.taildir.TaildirSource.closeTailFiles:307)  - Closed file: /opt/module/applog/log/app.log, inode: 4200226, pos: 9028879
+29 十月 2024 18:50:12,089 INFO  [PollableSourceRunner-TaildirSource-r1] (org.apache.flume.source.taildir.TaildirSource.closeTailFiles:307)  - Closed file: /opt/module/applog/log/app.2024-10-26.log, inode: 4199550, pos: 367135
+29 十月 2024 19:05:55,237 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:140)  - Shutting down configuration: { sourceRunners:{r1=PollableSourceRunner: { source:Taildir source: { positionFile: /opt/module/flume/taildir_position.json, skipToEnd: false, byteOffsetHeader: false, idleTimeout: 120000, writePosInterval: 3000 } counterGroup:{ name:null counters:{runner.backoffs.consecutive=216, runner.polls=216, runner.backoffs=216} } }} sinkRunners:{} channels:{c1=org.apache.flume.channel.kafka.KafkaChannel{name: c1}} }
+29 十月 2024 19:05:55,239 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:144)  - Stopping Source r1
+29 十月 2024 19:05:55,240 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: PollableSourceRunner: { source:Taildir source: { positionFile: /opt/module/flume/taildir_position.json, skipToEnd: false, byteOffsetHeader: false, idleTimeout: 120000, writePosInterval: 3000 } counterGroup:{ name:null counters:{runner.backoffs.consecutive=216, runner.polls=216, runner.backoffs=216} } }
+29 十月 2024 19:05:55,242 INFO  [PollableSourceRunner-TaildirSource-r1] (org.apache.flume.source.PollableSourceRunner$PollingRunner.run:143)  - Source runner interrupted. Exiting
+29 十月 2024 19:05:55,248 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: SOURCE, name: r1 stopped
+29 十月 2024 19:05:55,248 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: SOURCE, name: r1. source.start.time == 1730198886091
+29 十月 2024 19:05:55,249 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: SOURCE, name: r1. source.stop.time == 1730199955247
+29 十月 2024 19:05:55,249 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.append-batch.accepted == 125
+29 十月 2024 19:05:55,250 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.append-batch.received == 125
+29 十月 2024 19:05:55,250 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.append.accepted == 0
+29 十月 2024 19:05:55,251 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.append.received == 0
+29 十月 2024 19:05:55,251 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.channel.write.fail == 0
+29 十月 2024 19:05:55,251 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.event.read.fail == 0
+29 十月 2024 19:05:55,252 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.events.accepted == 12434
+29 十月 2024 19:05:55,252 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.events.received == 12434
+29 十月 2024 19:05:55,252 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.generic.processing.fail == 0
+29 十月 2024 19:05:55,252 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: SOURCE, name: r1. src.open-connection.count == 0
+29 十月 2024 19:05:55,253 INFO  [agent-shutdown-hook] (org.apache.flume.source.taildir.TaildirSource.stop:144)  - Taildir source r1 stopped. Metrics: SOURCE:r1{src.events.accepted=12434, src.open-connection.count=0, src.append.received=0, src.channel.write.fail=0, src.append-batch.received=125, src.generic.processing.fail=0, src.append-batch.accepted=125, src.append.accepted=0, src.events.received=12434, src.event.read.fail=0}
+29 十月 2024 19:05:55,254 INFO  [agent-shutdown-hook] (org.apache.flume.node.Application.stopAllComponents:164)  - Stopping Channel c1
+29 十月 2024 19:05:55,254 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:169)  - Stopping component: org.apache.flume.channel.kafka.KafkaChannel{name: c1}
+29 十月 2024 19:05:55,261 INFO  [agent-shutdown-hook] (org.apache.kafka.clients.producer.KafkaProducer.close:1205)  - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+29 十月 2024 19:05:55,270 INFO  [agent-shutdown-hook] (org.apache.kafka.common.metrics.Metrics.close:668)  - Metrics scheduler closed
+29 十月 2024 19:05:55,270 INFO  [agent-shutdown-hook] (org.apache.kafka.common.metrics.Metrics.close:672)  - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+29 十月 2024 19:05:55,270 INFO  [agent-shutdown-hook] (org.apache.kafka.common.metrics.Metrics.close:678)  - Metrics reporters closed
+29 十月 2024 19:05:55,271 INFO  [agent-shutdown-hook] (org.apache.kafka.common.utils.AppInfoParser.unregisterAppInfo:83)  - App info kafka.producer for producer-1 unregistered
+29 十月 2024 19:05:55,271 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:149)  - Component type: CHANNEL, name: c1 stopped
+29 十月 2024 19:05:55,271 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:155)  - Shutdown Metric for type: CHANNEL, name: c1. channel.start.time == 1730198885628
+29 十月 2024 19:05:55,271 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:161)  - Shutdown Metric for type: CHANNEL, name: c1. channel.stop.time == 1730199955271
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.capacity == 0
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.current.size == 0
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.event.put.attempt == 12434
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.event.put.success == 12434
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.event.take.attempt == 0
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.event.take.success == 0
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.kafka.commit.time == 0
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.kafka.event.get.time == 0
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.kafka.event.send.time == 837
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:177)  - Shutdown Metric for type: CHANNEL, name: c1. channel.rollback.count == 0
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.channel.kafka.KafkaChannel.stop:159)  - Kafka channel c1 stopped.
+29 十月 2024 19:05:55,272 INFO  [agent-shutdown-hook] (org.apache.flume.lifecycle.LifecycleSupervisor.stop:78)  - Stopping lifecycle supervisor 16

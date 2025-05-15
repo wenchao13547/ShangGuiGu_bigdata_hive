@@ -1,0 +1,77 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "column": [
+                            "id",
+                            "name",
+                            "age",
+                            "tall",
+                            "address",
+                            "school"
+                        ],
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://hadoop102:3306/class1"
+                                ],
+                                "table": [
+                                    "students"
+                                ]
+                            }
+                        ],
+                        "password": "12345678",
+                        "splitPk": "",
+                        "username": "root"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "bigint"
+                            },
+			                                {
+                                "name": "age",
+                                "type": "int"
+                            },
+                            {
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tall",
+                                "type": "float"
+                            },
+                            {
+                                "name": "address",
+                                "type": "string"
+                            },
+                            {
+                                "name": "school",
+                                "type": "string"
+                            }
+                        ],
+                        "compress": "gzip",
+                        "defaultFS": "hdfs://hadoop102:9870",
+                        "fieldDelimiter": "\t",
+                        "fileName": "studentsss",
+                        "fileType": "text",
+                        "path": "/dataxtest",
+                        "writeMode": "append"
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": 1
+            }
+        }
+    }
+}
